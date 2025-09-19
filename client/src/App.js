@@ -19,7 +19,7 @@ function App() {
         const timestamp = position.timestamp;
         console.log('Geolocation granted:', { latitude, longitude, accuracy, timestamp });
         try {
-          const response = await axios.post('http://localhost:5001/api/location', {
+          const response = await axios.post('https://gps-tracker-i0li.onrender.com/api/location', {
             latitude,
             longitude,
             accuracy,
