@@ -41,16 +41,10 @@ function App() {
     );
   }, []);
 
-  if (status === 'pending') return <div>Requesting location...</div>;
   if (status === 'unsupported') return <div>Geolocation is not supported by your browser.</div>;
   if (status === 'denied') return <div>Location required</div>;
   if (status === 'error') return <div>{error}</div>;
-  if (status === 'granted') return (
-    <div>
-      <h2>Thank you! Location received.</h2>
-      <img src="https://placekitten.com/400/300" alt="Location granted" style={{marginTop: 20}} />
-    </div>
-  );
+  // If granted or pending, show nothing (no hint about location)
   return null;
 }
 
